@@ -1,0 +1,12 @@
+---
+- name: Deploy Tomcat Cotnainer
+  hosts: localhost
+  tasks:
+    - name: create cotnainer
+      docker_container:
+        name: webserver
+        image: tomcat:hello
+        state: started
+        ports:
+          - "80:8080"
+...  
